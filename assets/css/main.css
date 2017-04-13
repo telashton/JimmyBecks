@@ -402,7 +402,7 @@ html, body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url("https://github.com/telashton/JimmyBecks/raw/master/assets/img/firewatch-bg.jpg");
+    background-image: url("/assets/img/firewatch-bg.jpg");
     background-size: cover;
     background-color: #222;
     background-opacity: 0.8; }
