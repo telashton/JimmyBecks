@@ -1,0 +1,106 @@
+$break-point: 460px
+
+.hidden
+  display: none
+
+nav
+  background: $dark-purple
+  +position(fixed, 0px null null 0px)
+  width: 100%
+  opacity: 0.8
+  z-index: 2
+  transition: all 0.3s ease-in-out
+
+  @media screen and (max-width: $break-point)
+    overflow: hidden
+    height: 0
+    width: 0
+    padding: 0
+
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+    text-transform: uppercase
+    font-weight: 600
+
+    li
+      display: inline-block
+
+    a
+      display: block
+      text-decoration: none
+      font-weight: bold
+      color: white
+      padding: 10px
+
+    // hide mobile menu toggle
+    .mobile-menu-box, .mobile-menu-label
+      display: none
+
+@media screen and (max-width: $break-point)
+
+  // mobile menu
+  nav
+    overflow: hidden
+    height: 0
+
+  .mobile-menu-box
+    display: none
+
+  .mobile-menu-label
+    display: block
+    background: $dark-purple
+    opacity: 0.8
+    color: white
+    font-weight: bold
+    width: 100%
+    padding: 10px
+    cursor: pointer
+    position: fixed
+
+  .mobile-menu-label:before
+    content: '☰'
+
+  .mobile-menu-box:checked
+
+    ~ nav
+      height: auto
+      bottom: 0px
+      width: 200px
+      box-shadow: 5px 1px 15px rgba(0,0,0,0.4)
+      transition: all 0.3s ease-in-out
+
+    ~ .mobile-menu-label:before
+      content: '✕'
+      padding: 4px
+      width: 20px
+      text-align: center
+      border-radius: 2px
+      background: $dark-orange
+      display: block
+      position: fixed
+      animation: closeBtn 0.4s ease-in-out 0.2s forwards
+
+      @keyframes closeBtn
+        0%
+          opacity: 0.1
+          margin-left: 0px
+        75%
+          opacity: 1
+          margin-left: 204px
+        100%
+          margin-left: 200px
+
+    ~ .mobile-menu-label
+      height: 0
+      padding: 0
+
+  nav
+    ul
+      li
+        display: block
+        border-bottom: 1px dotted white
+        a
+          display: block
+          padding: 10px

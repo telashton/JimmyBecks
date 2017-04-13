@@ -1,0 +1,101 @@
+.wrapper
+  overflow: hidden
+  background: transparent
+
+nav
+  background: $dark-purple
+  width: 250px
+  position: fixed
+  top: 0px
+  left: -250px
+  bottom: 0px
+  z-index: 2
+  opacity: 0.8
+  transition: all 0.4s ease-in-out
+
+  ul
+    margin: 40px 0 0
+    padding: 0
+    text-transform: uppercase
+    font-weight: 600
+    li
+      display: block
+      border-bottom: 1px dotted white
+      a
+        display: block
+        padding: 18px
+
+  &.show
+    left: 0px
+
+.menu
+  position: fixed
+  top: 25px
+  left: 18px
+  display: inline-block
+  background: black
+  width: 20px
+  height: 3px
+  z-index: 3
+  cursor: pointer
+  animation: fade-out 0.6s ease-in-out forwards
+
+  @keyframes fade-out
+    0%
+      transform: translateX(190px)
+    75%
+      transform: translateX(-5px)
+    100%
+      transform: translateX(0px)
+
+  &:before, &:after
+    content: ''
+    display: block
+    width: 20px
+    height: 3px
+    position: absolute
+    background: black
+    transition: all 0.5s ease-in-out 0.4s
+
+  &:before
+    margin-top: -6px
+  &:after
+    margin-top: 6px
+
+  &.open
+    animation: open 0.8s ease-in-out forwards
+
+    @keyframes open
+      0%
+        background: black
+        transform: translateX(0px)
+      35%
+        background: white
+        transform: translateX(0px)
+      50%
+        background: white
+      70%
+        background: white
+        transform: translateX(205px)
+      90%
+        background: white
+      100%
+        background: transparent
+        transform: translateX(190px)
+
+    &:after
+      margin: 0
+      transform: rotate(-45deg)
+    &:before
+      margin: 0
+      transform: rotate(45deg)
+    &:before, &:after
+      animation: fade 0.8s ease-in-out forwards
+
+      @keyframes fade
+        0%
+          background: black
+        35%
+          background: white
+        100%
+          background: white

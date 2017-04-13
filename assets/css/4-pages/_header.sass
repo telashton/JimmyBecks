@@ -1,0 +1,35 @@
+html, body
+  height: 100%
+
+  header
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    background:
+      //image: url("http://www.anawalls.com/images/space/universe-galaxy-stars-light.jpg")
+      image: url("/assets/img/firewatch-bg.jpg")
+      size: cover
+      color: $grey
+      opacity: 0.8
+
+    h1
+      color: $dark-purple
+      margin: 5px 0
+      text-shadow: 2px 2px 0px rgba(255,255,255,0.9)
+
+      @media (max-width: 440px)
+        font-size: 50px
+
+    h3
+      font-size: 22px
+      color: #170017
+      margin: 5px 0
+      padding: 5px 15px 0 15px
+      background: #fff
+      opacity: 0.8
+      border-radius: 2px
+
+      @media (max-width: 440px)
+        font-size: 16px

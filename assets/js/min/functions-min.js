@@ -1,0 +1,1 @@
+$(document).ready(function(){}),$("span.menu").click(function(){$(this).hasClass("open")?($("nav").removeClass("show"),$(this).removeClass("open")):($("nav").addClass("show"),$(this).addClass("open"))});
